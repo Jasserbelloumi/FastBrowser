@@ -1,26 +1,21 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+}
 
 android {
     namespace 'com.jasser.browser'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.jasser.browser"
-        minSdk 26
-        targetSdk 33
+        minSdk 21
+        targetSdk 34
         versionCode 1
         versionName "1.0"
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-        }
     }
 }
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.8.0'
-    implementation 'androidx.webkit:webkit:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
 }
