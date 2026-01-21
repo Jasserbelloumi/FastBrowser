@@ -1,19 +1,5 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/action_dark_mode"
-        android:title="الوضع الليلي"
-        android:checkable="true" />
-    <item
-        android:id="@+id/action_turbo_mode"
-        android:title="وضع التوفير الأقصى"
-        android:checkable="true" />
-    <item
-        android:id="@+id/action_block_redirect"
-        android:title="منع إعادة التوجيه"
-        android:checkable="true" />
-    <item
-        android:id="@+id/action_adblock"
-        android:title="مانع الإعلانات"
-        android:checkable="true"
-        android:checked="true" />
+    <item android:id="@+id/action_dark_mode" android:title="الوضع الليلي" android:checkable="true" />
+    <item android:id="@+id/action_turbo_mode" android:title="وضع التوفير الأقصى" android:checkable="true" />
+    <item android:id="@+id/action_clear_data" android:title="مسح البيانات" />
 </menu>

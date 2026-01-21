@@ -8,42 +8,53 @@
         android:id="@+id/top_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        android:gravity="center_vertical"
+        android:orientation="vertical"
         android:background="#FFFFFF"
         android:elevation="4dp">
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="45dp"
-            android:layout_weight="1"
-            android:background="@drawable/search_bar_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingHorizontal="15dp">
+            android:padding="10dp"
+            android:gravity="center_vertical">
 
-            <EditText
-                android:id="@+id/url_input"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@null"
-                android:hint="ابحث أو أدخل رابطاً..."
-                android:textSize="14sp"
-                android:singleLine="true"
-                android:imeOptions="actionGo"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:background="@drawable/search_bar_bg"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="15dp">
+
+                <EditText
+                    android:id="@+id/url_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="ابحث أو أدخل رابطاً..."
+                    android:textSize="14sp"
+                    android:singleLine="true"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/go_button"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:text="انطلق"
+                android:backgroundTint="#1A73E8"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"/>
         </LinearLayout>
 
-        <Button
-            android:id="@+id/go_button"
-            android:layout_width="60dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="8dp"
-            android:text="انطلق"
-            android:textSize="12sp"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#1A73E8"
-            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"/>
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:progressDrawable="@android:color/holo_blue_dark"
+            android:visibility="gone"/>
     </LinearLayout>
 
     <WebView
@@ -60,31 +71,9 @@
         android:layout_alignParentBottom="true"
         android:background="#F8F9FA"
         android:orientation="horizontal"
-        android:gravity="center"
-        android:elevation="8dp">
-
-        <ImageButton
-            android:id="@+id/back_btn"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@android:drawable/ic_media_previous"
-            android:background="?attr/selectableItemBackgroundBorderless"/>
-
-        <ImageButton
-            android:id="@+id/refresh_btn"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@android:drawable/stat_notify_sync"
-            android:background="?attr/selectableItemBackgroundBorderless"/>
-
-        <ImageButton
-            android:id="@+id/forward_btn"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@android:drawable/ic_media_next"
-            android:background="?attr/selectableItemBackgroundBorderless"/>
+        android:gravity="center">
+        <ImageButton android:id="@+id/back_btn" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:src="@android:drawable/ic_media_previous" android:background="?attr/selectableItemBackgroundBorderless"/>
+        <ImageButton android:id="@+id/refresh_btn" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:src="@android:drawable/stat_notify_sync" android:background="?attr/selectableItemBackgroundBorderless"/>
+        <ImageButton android:id="@+id/forward_btn" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:src="@android:drawable/ic_media_next" android:background="?attr/selectableItemBackgroundBorderless"/>
     </LinearLayout>
 </RelativeLayout>
