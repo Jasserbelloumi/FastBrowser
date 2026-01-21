@@ -1,46 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="#FFFFFF">
 
     <LinearLayout
+        android:id="@+id/top_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="8dp"
-        android:background="#EEEEEE">
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:background="#FFFFFF"
+        android:elevation="4dp">
 
-        <EditText
-            android:id="@+id/url_input"
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:layout_weight="1"
-            android:hint="أدخل الرابط أو ابحث..."
-            android:inputType="textUri"
-            android:imeOptions="actionGo"/>
+            android:background="@drawable/search_bar_bg"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="15dp">
+
+            <EditText
+                android:id="@+id/url_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="ابحث أو أدخل رابطاً..."
+                android:textSize="14sp"
+                android:singleLine="true"
+                android:imeOptions="actionGo"/>
+        </LinearLayout>
 
         <Button
             android:id="@+id/go_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ذهاب"/>
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:text="انطلق"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#1A73E8"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"/>
     </LinearLayout>
 
     <WebView
         android:id="@+id/webview"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/top_bar"
+        android:layout_above="@id/bottom_nav"/>
 
     <LinearLayout
+        android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:background="#F8F9FA"
         android:orientation="horizontal"
         android:gravity="center"
-        android:background="#EEEEEE">
-        <Button android:id="@+id/back_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="◀"/>
-        <Button android:id="@+id/refresh_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🔄"/>
-        <Button android:id="@+id/forward_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="▶"/>
+        android:elevation="8dp">
+
+        <ImageButton
+            android:id="@+id/back_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@android:drawable/ic_media_previous"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+        <ImageButton
+            android:id="@+id/refresh_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@android:drawable/stat_notify_sync"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+        <ImageButton
+            android:id="@+id/forward_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@android:drawable/ic_media_next"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>
