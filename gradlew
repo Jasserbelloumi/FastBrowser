@@ -1,2 +1,2 @@
-#!/bin/sh
-echo "Simulating Gradlew for CI..."
+#!/bin/bash
+./gradlew assembleDebug
