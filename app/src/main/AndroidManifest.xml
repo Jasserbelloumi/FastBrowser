@@ -3,13 +3,15 @@
     package="com.jasser.browser">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:allowBackup="true"
-        android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        android:allowBackup="false"
+        android:label="FastBrowser - Jasser"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
         
+        <meta-data android:name="developer" android:value="Jasser Belloumi" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
